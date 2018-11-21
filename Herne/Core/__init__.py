@@ -2,7 +2,7 @@ class singleton(type):
     _loaded = {}
     def __call__(app, *args, **kwargs):
         if app not in app._loaded:
-            _super = super(_singleton, app)
+            _super = super(singleton, app)
             app._loaded[app] = _super.__call__(*args, **kwargs)
         return app._loaded[app]
 

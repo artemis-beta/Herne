@@ -57,4 +57,4 @@ class HerneApp(object, metaclass=singleton):
         for member in self._members:
             setattr(self, member, None)
         self.OutputLevel = 'INFO'
-        _run() + self
+        app_run() + self
