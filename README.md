@@ -36,7 +36,7 @@ when it comes to debugging in future.
 To run your Herne App you will now need to define the options file for the run, these options can also be appended to the App script
 as a `__main__` however it is recommended to code them seperately as this means you can have multiple options files for vriety.
 
-Using again the example above for our HelloWorld app, assuming the app script has been named `Confiurables` and is part of
+Using again the example above for our HelloWorld app, assuming the app script has been named `Configurables` and is part of
 a python application called `greeting`, an options file `run_dave.py` would take the form:
 
 ```
@@ -65,3 +65,6 @@ INFO:Herne Runner	: Application Setup Successful.
 Hello Dave!
 INFO:Herne Runner	: Application Completed Successfully.
 ```
+Note also it is possible to put the application code into a normal python script and create a new options script running both together:
+
+`./run hello.py run_dave.py`
