@@ -6,7 +6,7 @@ class singleton(type):
             app._loaded[app] = _super.__call__(*args, **kwargs)
         return app._loaded[app]
 
-class app_run(object, metaclass=_singleton):
+class app_run(object, metaclass=singleton):
     __apps__ = []
     def __add__(self, other):
         self.__apps__.append(other)
