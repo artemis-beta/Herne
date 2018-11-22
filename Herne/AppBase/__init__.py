@@ -37,6 +37,9 @@ class HerneApp(object, metaclass=singleton):
         return self
 
     def __exit__(self, type, value, traceback):
+        if type:
+            self._herne_logger.error("Application Failed to Complete.")
+            exit(1)
         self._herne_logger.info(' Application Completed Successfully.')
 
     def __init__(self, app_name=None):
