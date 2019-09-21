@@ -83,7 +83,8 @@ update this version number whenever the app is modified.
 ```
 from Herne.AppBuilder import AppBuilder
 
-AppBuilder('HelloWorld', ['UserName'], author='Joe Bloggs', description='Simple App to greet the user!', out_file='hello_world.py')
+AppBuilder('HelloWorld', ['UserName'], author='Joe Bloggs',
+           description='Simple App to greet the user!', out_file='hello_world.py')
 ```
 
 The generated script can then be modified with the author then adding all the methods they wish to call within the defined
