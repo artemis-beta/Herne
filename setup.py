@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name                =  'Herne'                                       ,
-      version             =  '0.1.2'                                       ,
+      version             =  '0.2.1'                                       ,
       description         =  'Configurable Application Framework.'         ,
       url                 =  ''                                            ,
       author              =  'Kristian Zarebski'                           ,

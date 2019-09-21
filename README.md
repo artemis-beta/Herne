@@ -68,3 +68,23 @@ INFO:Herne Runner	: Application Completed Successfully.
 Note also it is possible to put the application code into a normal python script and create a new options script running both together:
 
 `./run hello.py run_dave.py`
+
+## Using the App Builder
+
+The latest version of Herne now includes an app builder to simplify the process. The `AppBuilder' creates a python script containing a
+new app based on the users requirements:
+
+`AppBuilder(app_name, configurable_parameters, out_file=None, author=None, description=None)`
+
+By default the output file is the name of the app in lower case. An author name and description can be provided with the information
+also written to the script itself. The version of the app is automatically initialised to `v0.1.0`, it is recommended that you
+update this version number whenever the app is modified.
+
+```
+from Herne.AppBuilder import AppBuilder
+
+AppBuilder('HelloWorld', ['UserName'], author='Joe Bloggs', description='Simple App to greet the user!', out_file='hello_world.py')
+```
+
+The generated script can then be modified with the author then adding all the methods they wish to call within the defined
+`__call__` function within the created class. The script also contains a basic level of documentation.
