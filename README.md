@@ -48,7 +48,7 @@ That's it! Now to run our application we use the included `run` script within He
 
 `./run run_dave.py`
 
-this would give the output:
+(in the case of Windows `python run run_dave.py`) this would give the output:
 
 ```
 ===================================================================
