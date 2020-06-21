@@ -1,4 +1,6 @@
 # Herne
+![Herne](https://github.com/artemis-beta/Herne/workflows/Herne/badge.svg?branch=master)[![CodeFactor](https://www.codefactor.io/repository/github/artemis-beta/herne/badge)](https://www.codefactor.io/repository/github/artemis-beta/herne)
+
 Herne is a wrapper application that can be used to configure other applications. 
 
 ## Creating a Basic Herne App
