@@ -47,7 +47,8 @@ class TestHerne(unittest.TestCase):
             f.write(_str)
 
         # Run Herne and Check Exit 0
-        self.assertFalse(subprocess.check_call(f'./run {_interface} {_opts_file}', shell=True, stdout=subprocess.DEVNULL ))
+        _executable = os.path.join(os.getcwd(), 'run')
+        self.assertFalse(subprocess.check_call(f'{_executable} {_interface} {_opts_file}', shell=True, stdout=subprocess.DEVNULL ))
 
         # Clean Up
         assert(not subprocess.check_call( f'rm {_opts_file}', shell=True ))
