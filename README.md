@@ -34,10 +34,9 @@ when it comes to debugging in future.
 
 ## Running a Herne App
 To run your Herne App you will now need to define the options file for the run, these options can also be appended to the App script
-as a `__main__` however it is recommended to code them seperately as this means you can have multiple options files for vriety.
+as a `__main__` however it is recommended to code them seperately as this means you can have multiple options files for variety.
 
-Using again the example above for our HelloWorld app, assuming the app script has been named `Configurables` and is part of
-a python application called `greeting`, an options file `run_dave.py` would take the form:
+As an example, if the application `HelloWorld` has been developed and is found in its own directory `greeting` we can setup the Herne interface by creating placing the code above into a file `greeting/Configurables.py`. Say we want to greet a user "Dave", we would then make an options script to be read in at the same time:
 
 ```
 from greeting.Configurables import HelloWorld
@@ -69,6 +68,14 @@ Note also it is possible to put the application code into a normal python script
 
 `./run hello.py run_dave.py`
 
+the contents of `run_dave.py` would then just be:
+
+```
+HelloWorld().UserName = 'Dave'
+```
+
+as the imports would be read directly from the application script itself.
+
 ## Using the App Builder
 
 The latest version of Herne now includes an app builder to simplify the process. The `AppBuilder' creates a python script containing a
@@ -88,4 +95,15 @@ AppBuilder('HelloWorld', ['UserName'], author='Joe Bloggs',
 ```
 
 The generated script can then be modified with the author then adding all the methods they wish to call within the defined
-`__call__` function within the created class. The script also contains a basic level of documentation.
+`__call__` function within the created class. The script also contains a basic level of documentation. 
+
+The generated script would then be placed into the code folder for the module in development (`Configurables.py` here):
+
+```
+my_module
+   |- my_module
+   |     |_ Configurables.py
+   |     |_ __init__.py
+   |     |
+   ..    ..
+```

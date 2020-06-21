@@ -16,7 +16,10 @@ _host = socket.gethostname()
 import os
 import copy
 
-_width = os.get_terminal_size().columns
+try:
+    _width = os.get_terminal_size(0).columns
+except OSError:
+    _width = os.get_terminal_size(1).columns
 
 class HerneApp(object, metaclass=singleton):
     __version__ = None

@@ -50,7 +50,7 @@ class AppBuilder(object):
         self._name = app_name
         self._author = author
         self._desc = description
-        self._outfile = out_file if out_file else f'{self._name.lower()}.py'
+        self._outfile = out_file if out_file else f'{self._name.lower().replace(" ", "_")}.py'
         self._params = config_params
         self._par_str = '\n#        '.join([self._name+'().'+str(i)+' = value' for i in self._params])
         self._logger.info(f'Creating new app {self._name} in {self._outfile}')
@@ -77,7 +77,7 @@ class AppBuilder(object):
 from Herne.AppBase import HerneApp
 import copy
 
-class {self._name}(HerneApp):
+class {self._name.replace(" ","_")}(HerneApp):
     __version__ = 'v0.1.0'
     def __init__(self):
         HerneApp.__init__(self, '{self._name}')
