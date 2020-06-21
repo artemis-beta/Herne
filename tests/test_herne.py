@@ -48,6 +48,8 @@ class TestHerne(unittest.TestCase):
 
         # Run Herne and Check Exit 0
         _executable = os.path.join(os.getcwd(), 'run')
+        if os.name == 'nt':
+            _executable = f'python {_executable}'
         self.assertFalse(subprocess.check_call(f'{_executable} {_interface} {_opts_file}', shell=True, stdout=subprocess.DEVNULL ))
 
         # Clean Up
