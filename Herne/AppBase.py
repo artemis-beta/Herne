@@ -19,7 +19,10 @@ import copy
 try:
     _width = os.get_terminal_size(0).columns
 except OSError:
-    _width = os.get_terminal_size(1).columns
+    try:
+        _width = os.get_terminal_size(1).columns
+    except OSError:
+        _width = 80
 
 class HerneApp(object, metaclass=singleton):
     __version__ = None
